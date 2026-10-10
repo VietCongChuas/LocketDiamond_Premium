@@ -1,0 +1,12 @@
+#!name=Locket Gold VietCongChuas
+#!desc=Mở khoá premium cho ứng dụng Locket Widget
+
+[General]
+user-agent = Locket/1.0.0 (iPhone; iOS 26.3; Scale/3.00)
+
+[Script]
+revenuecat = type=http-response, pattern=^https:\/\/api\.revenuecat\.com\/.*\/(receipts$|subscribers\/[^/]+$), script-path=https://raw.githubusercontent.com/VietCongChuas/LocketDiamond_Premium/main/locketfix_fixpre.js, requires-body=true, max-size=-1, timeout=120
+deleteHeader = type=http-request, pattern=^https:\/\/api\.revenuecat\.com\/.*\/(receipts|subscribers), script-path=https://raw.githubusercontent.com/VietCongChuas/LocketDiamond_Premium/main/header_fixpre.js, timeout=120
+
+[MITM]
+hostname = api.revenuecat.com, raw.githubusercontent.com
